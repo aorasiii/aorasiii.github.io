@@ -187,7 +187,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-04-13 10:08:55 / Modified: 10:24:37" itemprop="dateCreated datePublished" datetime="2022-04-13T10:08:55+08:00">2022-04-13</time>
+      <time title="Created: 2022-04-13 10:08:55 / Modified: 10:36:00" itemprop="dateCreated datePublished" datetime="2022-04-13T10:08:55+08:00">2022-04-13</time>
     </span>
 
   
@@ -200,28 +200,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="概覽"><a href="#概覽" class="headerlink" title="概覽"></a>概覽</h2><ul>
+          <h2 id="順序"><a href="#順序" class="headerlink" title="順序"></a>順序</h2><ul>
 <li>環境建置<ul>
 <li>安裝 node.js </li>
-<li>安裝 hexo package</li>
+<li><a href="#%E5%AE%89%E8%A3%9D-hexo-package">安裝 Hexo package</a></li>
 <li>安裝 Git 與建立 Git repo</li>
 </ul>
 </li>
 <li>建立第一個 Hexo 框架網站<ul>
-<li>init Hexo</li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-hexo">init Hexo</a></li>
 </ul>
 </li>
-<li>部署到 Github 上<ul>
+<li><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-%E4%B8%8A">部署到 Github 上</a><ul>
 <li>可能會遇到的問題</li>
 </ul>
 </li>
 </ul>
-<h2 id="安裝-hexo-package"><a href="#安裝-hexo-package" class="headerlink" title="安裝 hexo package"></a>安裝 hexo package</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="安裝-Hexo-package"><a href="#安裝-Hexo-package" class="headerlink" title="安裝 Hexo package"></a>安裝 Hexo package</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>檢查</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --version</span><br></pre></td></tr></table></figure>
-<p>初始化Hexo</p>
+
+<h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><p>cd 到網站的 root path 中</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init XXXXX // 會同步建立一個新的資料夾XXXXX</span><br></pre></td></tr></table></figure>
-<p>cd 到目標資料夾中，安裝需要的npm package</p>
+<p>安裝需要的npm package</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 <p>init 出來的資料夾與檔案說明<br><a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-hexo-github">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></p>
 <h2 id="部署到-Github-上"><a href="#部署到-Github-上" class="headerlink" title="部署到 Github 上"></a>部署到 Github 上</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl  // 清理之前的靜態資料</span><br><span class="line">$ hexo g   // 建立靜態頁面</span><br><span class="line">$ hexo d   // deploy 到 git </span><br></pre></td></tr></table></figure>
