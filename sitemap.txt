@@ -1,3 +1,4 @@
+http://example.com/2022/04/15/how-to-change-the-theme-of-hexo-website/
 http://example.com/404.html
 http://example.com/2022/04/13/how-to-build-website-with-HEXO/
 http://example.com/about/index.html
