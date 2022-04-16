@@ -29,7 +29,7 @@
 <meta property="og:description" content="在完成網站基本的架設與部署到 Github 上面後，現在要學習怎麼把 Hexo 的主題更改成自己喜歡的樣式，而在 Hexo 的官方網站上也有提供許多網友製作的主題可以提供大家下載，那就準備動手幫自己的網站換上新的衣服吧！">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-04-15T08:50:32.000Z">
-<meta property="article:modified_time" content="2022-04-15T09:15:53.784Z">
+<meta property="article:modified_time" content="2022-04-16T05:45:43.901Z">
 <meta property="article:author" content="Alfred is me">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="website">
@@ -134,18 +134,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -224,9 +224,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-04-15 16:50:32 / Modified: 17:15:53" itemprop="dateCreated datePublished" datetime="2022-04-15T16:50:32+08:00">2022-04-15</time>
+      <time title="Created: 2022-04-15 16:50:32" itemprop="dateCreated datePublished" datetime="2022-04-15T16:50:32+08:00">2022-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-16 13:45:43" itemprop="dateModified" datetime="2022-04-16T13:45:43+08:00">2022-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -279,9 +285,9 @@
 </blockquote>
 <p>更改後面的 landscape 為 next (或者其他主題名稱，要記得跟 theme 資料夾中的名稱相同)，這樣就算是完成主題的更改了！</p>
 <h2 id="測試結果"><a href="#測試結果" class="headerlink" title="測試結果"></a>測試結果</h2><p>接著在終端機中輸入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 <p>清除並且重新建立靜態頁面檔案，然後在自己的本地伺服器中先檢查一遍，如果順利完成主題更換後，就可以再透過</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>部署到自己的 Github 上面，這樣就完成主題的更換啦！</p>
 
     </div>
@@ -305,6 +311,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/04/16/why-we-use-if-name-equals-main-in-python/" rel="next" title="理解 Python 檔案中常見的 if __name__ == '__main__'">
+                  理解 Python 檔案中常見的 if __name__ == '__main__' <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

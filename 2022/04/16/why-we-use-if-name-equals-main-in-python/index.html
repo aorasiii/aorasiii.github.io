@@ -21,32 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="因為110-2學期，修了資工系的多媒體技術概論，接觸到了一些程式，也怕自己在藝術圈搞不出東西，所以開始投注自己的心力在學習前端的技術上，希望以後可以做到更多有趣得互動網頁。現在就從建立自己的個人網頁作為第一個開端吧！">
+    <meta name="description" content="有時候會在 python 的檔案中看見這一段程式碼   if name &#x3D;&#x3D; ‘main‘  但卻不知道它的用意何在，今天將讓我們快速地了解這段程式碼的用途吧！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="學會用 Hexo 框架建置個人網頁部署到 Github">
-<meta property="og:url" content="http://example.com/2022/04/13/how-to-build-website-with-HEXO/index.html">
+<meta property="og:title" content="理解 Python 檔案中常見的 if __name__ &#x3D;&#x3D; &#39;__main__&#39;">
+<meta property="og:url" content="http://example.com/2022/04/16/why-we-use-if-name-equals-main-in-python/index.html">
 <meta property="og:site_name" content="艾弗布拉格">
-<meta property="og:description" content="因為110-2學期，修了資工系的多媒體技術概論，接觸到了一些程式，也怕自己在藝術圈搞不出東西，所以開始投注自己的心力在學習前端的技術上，希望以後可以做到更多有趣得互動網頁。現在就從建立自己的個人網頁作為第一個開端吧！">
+<meta property="og:description" content="有時候會在 python 的檔案中看見這一段程式碼   if name &#x3D;&#x3D; ‘main‘  但卻不知道它的用意何在，今天將讓我們快速地了解這段程式碼的用途吧！">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-04-13T02:08:55.000Z">
-<meta property="article:modified_time" content="2022-04-16T05:45:15.099Z">
+<meta property="article:published_time" content="2022-04-16T05:59:31.000Z">
+<meta property="article:modified_time" content="2022-04-16T06:04:39.712Z">
 <meta property="article:author" content="Alfred is me">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="github">
-<meta property="article:tag" content="git">
-<meta property="article:tag" content="website">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2022/04/13/how-to-build-website-with-HEXO/">
+<link rel="canonical" href="http://example.com/2022/04/16/why-we-use-if-name-equals-main-in-python/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-tw","comments":true,"permalink":"http://example.com/2022/04/13/how-to-build-website-with-HEXO/","path":"2022/04/13/how-to-build-website-with-HEXO/","title":"學會用 Hexo 框架建置個人網頁部署到 Github"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-tw","comments":true,"permalink":"http://example.com/2022/04/16/why-we-use-if-name-equals-main-in-python/","path":"2022/04/16/why-we-use-if-name-equals-main-in-python/","title":"理解 Python 檔案中常見的 if __name__ == '__main__'"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>學會用 Hexo 框架建置個人網頁部署到 Github | 艾弗布拉格 - 踏上前端之路的人</title>
+<title>理解 Python 檔案中常見的 if __name__ == '__main__' | 艾弗布拉格 - 踏上前端之路的人</title>
   
 
 
@@ -109,7 +105,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -122,7 +118,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%86%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">順序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Hexo-package"><span class="nav-number">2.</span> <span class="nav-text">安裝 Hexo package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo"><span class="nav-number">3.</span> <span class="nav-text">初始化 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-Github-%E4%B8%8A"><span class="nav-number">4.</span> <span class="nav-text">部署到 Github 上</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,7 +194,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/13/how-to-build-website-with-HEXO/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/16/why-we-use-if-name-equals-main-in-python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -212,12 +207,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="學會用 Hexo 框架建置個人網頁部署到 Github | 艾弗布拉格">
+      <meta itemprop="name" content="理解 Python 檔案中常見的 if __name__ == '__main__' | 艾弗布拉格">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          學會用 Hexo 框架建置個人網頁部署到 Github
+          理解 Python 檔案中常見的 if __name__ == '__main__'
         </h1>
 
         <div class="post-meta-container">
@@ -227,15 +222,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-04-13 10:08:55" itemprop="dateCreated datePublished" datetime="2022-04-13T10:08:55+08:00">2022-04-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-16 13:45:15" itemprop="dateModified" datetime="2022-04-16T13:45:15+08:00">2022-04-16</time>
+      <time title="Created: 2022-04-16 13:59:31 / Modified: 14:04:39" itemprop="dateCreated datePublished" datetime="2022-04-16T13:59:31+08:00">2022-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -243,7 +232,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9E%B6%E7%AB%99/" itemprop="url" rel="index"><span itemprop="name">架站</span></a>
+          <a href="/categories/%E7%A8%8B%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">程式</span></a>
         </span>
     </span>
 
@@ -253,14 +242,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>630</span>
+      <span>847</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -271,43 +260,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>因為110-2學期，修了資工系的多媒體技術概論，接觸到了一些程式，也怕自己在藝術圈搞不出東西，所以開始投注自己的心力在學習前端的技術上，希望以後可以做到更多有趣得互動網頁。現在就從建立自己的個人網頁作為第一個開端吧！</p>
+        <p>有時候會在 python 的檔案中看見這一段程式碼</p>
+<blockquote>
+<p> if <strong>name</strong> &#x3D;&#x3D; ‘<strong>main</strong>‘</p>
+</blockquote>
+<p>但卻不知道它的用意何在，今天將讓我們快速地了解這段程式碼的用途吧！</p>
 <span id="more"></span>
+<p>簡單來說， <strong>name</strong> 是 python 直譯器在執行程式碼中，內建的其中一個變數，其涵義為<strong>模組名稱</strong>，如果檔案是被引用，其值會是模組名稱；但如果檔案是透過命令列直接執行，值便會是 __main__。</p>
+<p>舉例：假使我們有一個demo.py檔案，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#demo.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Hello world&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Good to see you 1&#x27;</span>)</span><br><span class="line">demo_print()</span><br></pre></td></tr></table></figure>
 
-<h2 id="順序"><a href="#順序" class="headerlink" title="順序"></a>順序</h2><ul>
-<li>環境建置<ul>
-<li>安裝 node.js </li>
-<li><a href="#%E5%AE%89%E8%A3%9D-hexo-package">安裝 Hexo package</a></li>
-<li>安裝 Git 與建立 Git repo</li>
-</ul>
-</li>
-<li>建立第一個 Hexo 框架網站<ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-hexo">init Hexo</a></li>
-</ul>
-</li>
-<li><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-%E4%B8%8A">部署到 Github 上</a><ul>
-<li>可能會遇到的問題</li>
-</ul>
-</li>
-</ul>
-<h2 id="安裝-Hexo-package"><a href="#安裝-Hexo-package" class="headerlink" title="安裝 Hexo package"></a>安裝 Hexo package</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>檢查版本號，確定是否安裝成功</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --version</span><br></pre></td></tr></table></figure>
+<p>執行檔案的結果會是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Good to see you 1&#x27;</span></span><br><span class="line"><span class="string">&#x27;Hello world&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><p>cd 到網站的根目錄中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init <span class="variable constant_">XXXXX</span> <span class="comment">// 會同步建立一個新的資料夾XXXXX</span></span><br></pre></td></tr></table></figure>
-<p>安裝需要的 npm package</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>初始化 (init) 出來的資料夾與檔案說明可以參考下面連結<br><a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-hexo-github">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></p>
-<h2 id="部署到-Github-上"><a href="#部署到-Github-上" class="headerlink" title="部署到 Github 上"></a>部署到 Github 上</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl  <span class="comment">// 清理之前的靜態資料</span></span><br><span class="line">$ hexo g   <span class="comment">// 建立靜態頁面</span></span><br><span class="line">$ hexo d   <span class="comment">// deploy 到 git </span></span><br></pre></td></tr></table></figure>
-<p>建立靜態頁面跟部署的指令可以簡寫成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-<p>途中可能會遇到部署失敗的問題</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>出現錯誤訊息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-<p>爬網後找到原因是因為沒有安裝 hexo-depolyer-git 套件<br>在終端機中輸入下方指令安裝後，就可以順利透過套件部署到 Github</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo-depolyer-git --save</span><br></pre></td></tr></table></figure>
+<p>但如果今天是透過 import 的方式執行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#current.py</span></span><br><span class="line"><span class="keyword">from</span> demo <span class="keyword">import</span> demo_print</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Good to see you 2&#x27;</span>)</span><br><span class="line">demo_print()</span><br></pre></td></tr></table></figure>
+
+<p>結果會是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Good to see you 2&#x27;</span></span><br><span class="line"><span class="string">&#x27;Hello world&#x27;</span></span><br><span class="line"><span class="string">&#x27;Good to see you 1&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>可以看見被導入的 function 主程式也被執行的問題，想要解決這個問題，只要在原先的demo.py檔案的主程式中加入 if <strong>name</strong> &#x3D;&#x3D; ‘<strong>main</strong>‘ 判斷就可以解決此問題，如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#demo.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo_print</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Good to see you 1&#x27;</span>)</span><br><span class="line">    demo_print()</span><br></pre></td></tr></table></figure>
+
+<p>之所以會使用到這樣的判斷條件，主要是因為該檔案有可能是單獨執行或者需要被引用的兩種情形。藉由這樣的方式就能讓單獨檔案在某些需要進行單元測試的時候可以順利執行。</p>
 
     </div>
 
@@ -317,22 +291,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-              <a href="/tags/blog/" rel="tag"># blog</a>
-              <a href="/tags/github/" rel="tag"># github</a>
-              <a href="/tags/git/" rel="tag"># git</a>
-              <a href="/tags/website/" rel="tag"># website</a>
+              <a href="/tags/python/" rel="tag"># python</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2022/04/15/how-to-change-the-theme-of-hexo-website/" rel="prev" title="學會更改 Hexo 網站框架的主題樣式">
+                  <i class="fa fa-chevron-left"></i> 學會更改 Hexo 網站框架的主題樣式
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04/15/how-to-change-the-theme-of-hexo-website/" rel="next" title="學會更改 Hexo 網站框架的主題樣式">
-                  學會更改 Hexo 網站框架的主題樣式 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
