@@ -50,7 +50,7 @@ class Bat {
 }
 
 function setup() {
-	createCanvas(350,600);
+	createCanvas(350, 600);
 	background(0);
 	ball = new Ball(0, 0, 15);
 	bat = new Bat();
@@ -71,9 +71,9 @@ function draw() {
 		}
 	}
 	textSize(30);
-	translate(width/2,height/2);
+	translate(width / 2, height / 2);
 	textAlign(CENTER);
-	text(score, 0,-140);
+	text(score, 0, -140);
 	// text(frameCount,100,100);
 
 	if (ball.y >= 500) {
@@ -85,6 +85,14 @@ function draw() {
 		text("Game Over", 0, 0);
 		// score -= 1;
 		exit();
+	}
+	for (let i = 0; i < width; i += width / 14) {
+		push();
+		fill("Red");
+		stroke(0);
+		strokeWeight(2);
+		rect(i, 0, 25, 12);
+		pop();
 	}
 }
 

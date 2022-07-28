@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 * {
   /* border: 2px solid black; */
-  color:white;
   /* font-family: "Noto Sans TC", sans-serif; */
   font-family: 'VT323', monospace;
 }
@@ -37,6 +36,9 @@ iframe{
   margin-left: -88px;
   font-size: 35px;
 
+  color:white;
+  animation: neon 1.8s ease-in-out infinite alternate;
+
 }
 
 .btn{
@@ -49,6 +51,7 @@ iframe{
   top: 30vh;
   background-color: black;
   padding: 4px 20px 4px 20px;
+  color: white;
   
 }
 .btn:hover{
@@ -68,4 +71,16 @@ a:visited {
 a:hover {
   color: red;
   transition: 0.3s;
+}
+
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 20px #fff, 0 0 100px #fff, 0 0 20px #fff;
+  }
+  50% {
+    text-shadow: 0 0 50px #fff, 0 0 150px #fff, 0 0 50px #fff;
+    color: rgb(136,247,250);
+  }
 }
