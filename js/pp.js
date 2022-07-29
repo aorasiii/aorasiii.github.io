@@ -54,10 +54,12 @@ function setup() {
 	background(0);
 	ball = new Ball(0, 0, 15);
 	bat = new Bat();
+	
 }
 
 function draw() {
 	background(80);
+	bricks();
 	// translate(width / 2, height / 2);
 	// ellipse(mouseX, mouseY, 20, 20);
 	ball.move();
@@ -70,7 +72,7 @@ function draw() {
 			score += 1;
 		}
 	}
-	textSize(30);
+	textSize(50);
 	translate(width / 2, height / 2);
 	textAlign(CENTER);
 	text(score, 0, -140);
@@ -86,13 +88,20 @@ function draw() {
 		// score -= 1;
 		exit();
 	}
-	for (let i = 0; i < width; i += width / 14) {
-		push();
-		fill("Red");
-		stroke(0);
-		strokeWeight(2);
-		rect(i, 0, 25, 12);
-		pop();
+	
+}
+function bricks(){
+	for (let i = 0; i < width; i += width / 20) {
+		for (let j = 0; j < 200; j += 200 / 12) {
+			push();
+			fill("#cf1a11");
+			stroke(0);
+			strokeWeight(2);
+			translate(10, height-90);
+			rect(i, j, 25, 18);
+
+			pop();
+		}
 	}
 }
 
