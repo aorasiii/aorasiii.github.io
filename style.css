@@ -43,6 +43,7 @@ iframe.background{
 }
 .upLeft {
   width: 30%;
+  margin-top: 24px;
 }
 .upLeft h1,span{
   margin: 0;
@@ -60,6 +61,7 @@ iframe.background{
 }
 .upRight {
   width: 70%;
+  margin-top: 24px;
 }
 /* .navbar {
 } */
